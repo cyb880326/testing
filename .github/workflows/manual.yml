@@ -18,8 +18,6 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      name: ssh deploy ${{ secrets.HOST01 }}
-      # You may pin to the exact commit or the version.
       uses: easingthemes/ssh-deploy@v2.2.11
       with:
         # 服务器私钥
