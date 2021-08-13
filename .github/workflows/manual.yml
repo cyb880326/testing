@@ -29,10 +29,10 @@ jobs:
           # 服务器端口
           REMOTE_PORT: ${{ secrets.HOST01_PORT }}
           # 源目录，编译后的目录
-          SOURCE: dist
+          SOURCE: "dist/"
           # 目标目录，服务器上的目录
           TARGET: ${{ secrets.HOST01_PATH }}
           #  rsync 参数
-          ARGS: -rltgoDzvO
+          ARGS: "-rltgoDzvO"
           # An array of folder to exclude
-          EXCLUDE: ''
+          EXCLUDE: ""
