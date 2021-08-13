@@ -1,9 +1,21 @@
 name: Deploy To Aliyun HK
+
 on:
   push:
     branches: [master]
+
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 15.x
+
+
   deploy-aliyun-hk:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       name: ssh deploy ${{ secrets.HOST01 }}
@@ -26,5 +38,3 @@ jobs:
         ARGS: # optional, default is -rltgoDzvO
         # An array of folder to exclude
         EXCLUDE: # optional, default is 
-
-
