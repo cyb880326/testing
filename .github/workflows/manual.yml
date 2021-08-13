@@ -21,7 +21,7 @@ jobs:
       - uses: easingthemes/ssh-deploy@v2.2.11
         with:
           # 服务器私钥
-          SSH_PRIVATE_KEY:  ${{ secrets.HOST01_SSH_PRIVATE_KEY }}
+          SSH_PRIVATE_KEY:  ${{ secrets.SSH_PRIVATE_KEY }}
           # 服务器IP
           REMOTE_HOST:  ${{ secrets.HOST01 }}
           # 服务器用户
