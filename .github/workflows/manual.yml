@@ -20,12 +20,14 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v2.0.10
+      - name: download artifact
+        uses: actions/download-artifact@v2.0.10
         with:
           name: mydist
           path: dist
 
-      - uses: easingthemes/ssh-deploy@v2.2.11
+      - name: deploy to ${{ secrets.HOST01 }}
+        uses: easingthemes/ssh-deploy@v2.2.11
         with:
           # 服务器私钥
           SSH_PRIVATE_KEY:  ${{ secrets.SSH_PRIVATE_KEY }}
