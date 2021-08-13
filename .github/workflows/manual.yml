@@ -23,7 +23,7 @@ jobs:
       - uses: actions/download-artifact@v2.0.10
         with:
           name: mydist
-          path: './'
+          path: dist
 
       - uses: easingthemes/ssh-deploy@v2.2.11
         with:
