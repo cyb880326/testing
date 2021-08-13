@@ -26,21 +26,21 @@ jobs:
           name: mydist
           path: dist
 
-      - name: deploy to ${{ secrets.HOST01 }}
+      - name: deploy to 47.242.213.140
         uses: easingthemes/ssh-deploy@v2.2.11
         with:
           # 服务器私钥
           SSH_PRIVATE_KEY:  ${{ secrets.SSH_PRIVATE_KEY }}
           # 服务器IP
-          REMOTE_HOST:  ${{ secrets.HOST01 }}
+          REMOTE_HOST:  47.242.213.140
           # 服务器用户
-          REMOTE_USER:  ${{ secrets.HOST01_USER }}
+          REMOTE_USER:  root
           # 服务器端口
-          REMOTE_PORT: ${{ secrets.HOST01_PORT }}
+          REMOTE_PORT: 22
           # 源目录，编译后的目录
           SOURCE: "dist/"
           # 目标目录，服务器上的目录
-          TARGET: ${{ secrets.HOST01_PATH }}
+          TARGET: "/usr/local/src/"
           #  rsync 参数
           ARGS: "-rltgoDzvO"
           # An array of folder to exclude
